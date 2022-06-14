@@ -21,8 +21,8 @@ export const getTask = (req,res) =>  {
 
 export const deleteTask =  (req,res) =>  {
     const {id} = req.params
-    res.send(users.filter((user) => user.id !== id ))
-  
+    users = users.filter((user) => user.id !== id )
+    res.send(users)
 }
 
 export const editTask = (req,res) =>  {
