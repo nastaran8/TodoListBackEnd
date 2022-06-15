@@ -30,13 +30,7 @@ app.use(bodyParser.json());
 
 app.use('/tasks',userRouters);
 app.get('/faker', fakeTest)
-
-// app.use('/tasks',userRouters,(req, res, next) => {
-//     res.append('Access-Control-Allow-Origin', ['*']);
-//     res.append('Access-Control-Allow-Methods', 'GET,PATCh,POST,DELETE');
-//     res.append('Access-Control-Allow-Headers', 'Content-Type');
-//     next();
-// });
+ 
 
 app.listen(PORT)
 

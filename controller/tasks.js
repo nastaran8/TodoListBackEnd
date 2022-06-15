@@ -1,7 +1,13 @@
 import { uuid } from 'uuidv4';
 import { faker } from '@faker-js/faker';
 
-let users = []
+let users = [
+    {
+        todo: "Create todo list", 
+        isDone:true, 
+        id:"1"
+    }
+]
 
 export const getTasks = (req,res) => res.send(users)
 
@@ -22,6 +28,11 @@ export const getTask = (req,res) =>  {
 export const deleteTask =  (req,res) =>  {
     const {id} = req.params
     users = users.filter((user) => user.id !== id )
+    res.send(users)
+}
+
+export const deleteAllTasks =  (req,res) =>  {
+    users = users.map((user) => {return {...user, todo : ""}} )
     res.send(users)
 }
 

@@ -1,12 +1,13 @@
 import express from "express"
-import { uuid } from 'uuidv4';
-import {getTasks,createTasks,getTask,deleteTask,editTask,fakeTest} from '../controller/tasks.js'
+import {getTasks,createTasks,getTask,deleteTask,editTask,deleteAllTasks} from '../controller/tasks.js'
 
 const router = express.Router();
 
 router.get('/', getTasks)
 
 router.post('/', createTasks)
+
+router.delete('/',deleteAllTasks)
 
 router.get('/:id', getTask)
 
